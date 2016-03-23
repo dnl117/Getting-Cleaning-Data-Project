@@ -32,4 +32,4 @@ allData_subset <- allData[,xData_subset]
 allData_2 <- melt(allData_subset, id=c("subjectID","activity"))
 tidyData <- dcast(allData_2, subjectID+activity ~ variable, mean)
 View(tidyData)
-write.table(tidyData, "tidyData.txt")
+write.csv(tidyData, "tidyData.txt", row.names = FALSE)
